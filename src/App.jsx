@@ -1,5 +1,6 @@
-import { useState } from 'react'
-
+// import { useState } from 'react'
+import Header from "./components/Header"
+import Start from "../src/routes/Start"
 import './App.css'
 
 function App() {
@@ -7,7 +8,8 @@ function App() {
 
   return (
     <>
-     <h2>heey</h2>
+    <Header/>
+    <Start/>
     </>
   )
 }
