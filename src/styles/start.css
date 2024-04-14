@@ -1,3 +1,5 @@
+/* section 1  */
+
 .wrapper {
   display: flex;
   justify-content: space-around;
@@ -28,10 +30,30 @@
     transform: scale(1.2);
     cursor: pointer;
 }
+
 .hero-img {
     max-width: 100%;
     height: auto; 
 }
+
+
+
+/* Section 2 About Me */
+.img{
+    max-width: 100%;
+    height: auto; 
+    padding:4em;
+}
+.about{
+    background-color: #1E1E1E;
+    display: flex;
+}
+
+.about__container{
+    border: 2px solid blue;
+}
+
+
 
 @media screen and (max-width:801px) {
     .wrapper {
@@ -55,4 +77,3 @@
         color:black;
     }
 }
-
