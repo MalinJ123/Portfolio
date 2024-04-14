@@ -40,7 +40,7 @@ function Header() {
         </span>
       </section>
       {isOpenMenuOverlay && windowWidth <= 701 && (
-        <div className="menu-overlay">
+        <div className={`menu-overlay ${isOpenMenuOverlay ? 'open' : ''}`}>
           <div className="menu-overlay__content">
             <div className="menu-item">Home</div>
             <div className="menu-item">Portfolio</div>

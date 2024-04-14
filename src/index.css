@@ -3,3 +3,19 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+:root {
+  /* fonts */
+    --font-jura: 'Jura', sans-serif;
+
+    /* colors */
+    --color-green: rgb(10, 196, 10); 
+
+/* root-button */
+
+
+  }
+
+
+
+/* font-family: var(--font-jura): */
