@@ -1,5 +1,5 @@
 import working from "../images/me-working.jpg";
-import me from "../images/me.jpg"
+import me from "../images/me.jpg";
 import "../styles/start.css";
 function Start() {
   return (
@@ -29,31 +29,33 @@ function Start() {
         <div className="about__container">
           <img className="img" src={me} alt="" />
         </div>
+
         <div className="about__container">
-          <h1>Abolut Me</h1>
-          <article>
+          <h1 className="about__container--title">Abolut Me</h1>
+          <article className="about__container--description">
             Under min yrkesresa insåg jag mitt intresse för IT och
             webbutveckling. Detta ledde mig till min pågående utbildning som
             Frontend-utvecklare. Där jag fokuserar på att fördjupa mina
             kunskaper inom UI/UX, HTML, CSS, JavaScript, React, +
             Backend-utveckling med Node.js, AWS, Firebase, MongoDb etc
           </article>
+          <div className="about__container--nav">
+            <nav className="navbar">Skills</nav>
+            <nav className="navbar">Experience</nav>
+            <nav className="navbar">Education</nav>
+          </div>
 
-          <nav>Skills</nav>
-          <nav>Experience</nav>
-          <nav>Education</nav>
-
-          <article>
-           <div>
-           <h5>UI/UX </h5>
-            <p>Designing Web/app interfaces</p>
-            
+          <article className="nav__container">
             <div>
-            <h5>Frontend Develpment</h5>
-            <p>HTML, CSS, JavaScript, React, TypeScript, Node.js, Responsive Design, Git, Npm package</p>
-            
+              <h5 className="nav__container--title"> UI/UX </h5>
+              <p>Designing Web/app interfaces</p>
+
+              <h5 className="nav__container--title">Frontend Develpment</h5>
+              <p>
+                HTML, CSS, JavaScript, React, TypeScript, Node.js, Responsive
+                Design, Git, Npm package
+              </p>
             </div>
-           </div>
           </article>
         </div>
       </section>

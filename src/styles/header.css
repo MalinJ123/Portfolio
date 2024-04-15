@@ -18,9 +18,7 @@
   display: flex;
   align-self: center;
   margin: 1em;
-  justify-content: center;
   color: white;
-  width: 100px;
   position: relative;
 }
 
@@ -54,7 +52,7 @@
 .menu-overlay {
   position: fixed;
   top: 5em;
-  right: 0; 
+  right: 0;
   width: 0;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.947);
@@ -67,8 +65,8 @@
 }
 
 .menu-overlay.open {
-  width: 100%; 
-  background-color: rgb(0, 0, 0); 
+  width: 100%;
+  background-color: rgb(0, 0, 0);
 }
 
 .menu-overlay__content {
@@ -92,12 +90,12 @@
   bottom: 0;
   left: 0;
   background-color: transparent;
-  transition: width 0.3s ease-out, background-color 0.3s ease-out; 
+  transition: width 0.3s ease-out, background-color 0.3s ease-out;
 }
 
 .menu-item:hover::before {
-  width: 100%; 
-  background-color: green; 
+  width: 100%;
+  background-color: green;
 }
 
 @media screen and (min-width: 701px) {
