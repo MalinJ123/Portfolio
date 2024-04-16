@@ -1,7 +1,14 @@
 import working from "../images/me-working.jpg";
 import me from "../images/me.jpg";
 import "../styles/start.css";
+import { useState } from "react";
 function Start() {
+  const [activeTab, setActiveTab] = useState("Skills");
+
+  const handleTabClick = (tab) => {
+    setActiveTab(tab);
+  };
+
   return (
     <>
       <section className="wrapper">
@@ -31,8 +38,8 @@ function Start() {
         </div>
 
         <div className="about__container">
-          <h1 className="about__container--title">Abolut Me</h1>
           <article className="about__container--description">
+            <h1 className="about__container--title">Abolut Me</h1>
             Under min yrkesresa insåg jag mitt intresse för IT och
             webbutveckling. Detta ledde mig till min pågående utbildning som
             Frontend-utvecklare. Där jag fokuserar på att fördjupa mina
@@ -40,22 +47,52 @@ function Start() {
             Backend-utveckling med Node.js, AWS, Firebase, MongoDb etc
           </article>
           <div className="about__container--nav">
-            <nav className="navbar">Skills</nav>
-            <nav className="navbar">Experience</nav>
-            <nav className="navbar">Education</nav>
+            <nav
+              className={`navbar ${activeTab === "Skills" ? "active" : ""}`}
+              onClick={() => handleTabClick("Skills")}
+            >
+              Skills
+            </nav>
+
+            <nav
+              className={`navbar ${activeTab === "Experience" ? "active" : ""}`}
+              onClick={() => handleTabClick("Experience")}
+            >
+              Experience
+            </nav>
+
+            <nav
+              className={`navbar ${activeTab === "Education" ? "active" : ""}`}
+            onClick={()=> handleTabClick("Education")}>
+              Education
+            </nav>
           </div>
 
-          <article className="nav__container">
-            <div>
-              <h5 className="nav__container--title"> UI/UX </h5>
+          <article className="nav__description--container">
+            {activeTab === "Skills" && (<div>
+              <h5 className="nav__description--title"> UI/UX </h5>
               <p>Designing Web/app interfaces</p>
 
-              <h5 className="nav__container--title">Frontend Develpment</h5>
+              <h5 className="nav__description--title">Frontend Develpment</h5>
               <p>
                 HTML, CSS, JavaScript, React, TypeScript, Node.js, Responsive
                 Design, Git, Npm package
               </p>
-            </div>
+            </div>)}
+            {activeTab === "Experience" && (
+               <div>
+               <h5 className="nav__description--title">Experience</h5>
+               <p>Your experience details here...</p>
+             </div>
+            )}
+
+            {activeTab === "Education" && (
+               <div>
+               <h5 className="nav__description--title">Education</h5>
+               <p>Your education details here...</p>
+             </div>
+            )}
+            
           </article>
         </div>
       </section>

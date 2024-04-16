@@ -58,12 +58,16 @@
 
 .about__container--title{
   display: flex;
-justify-content: center;
+  margin-bottom:0.5em;
+
 }
 
 .about__container--description{
   display: flex;
+  flex-direction: column;
   justify-self: center;
+  margin:1.5em;
+  line-height: 20px;
 }
 
 .about__container--nav{
@@ -75,6 +79,8 @@ justify-content: center;
 
 .navbar{
   position: relative;
+  cursor: pointer;
+
 }
  .navbar::after {
   content: "";
@@ -93,15 +99,19 @@ justify-content: center;
   background-color: var(--color-green);
   transform: scaleX(1);
 }
-.nav__container{
+.nav__description--container{
   margin-top:2em;
-  border:3px solid orange; 
 line-height: 2em;
+margin:1.5em;
+}
+.navbar:hover {
+  transform: scale(1.2); /* Scale the entire navbar element when hovering */
 }
 
+.nav__description--title{
+  color:var(--color-green)
 
-
-
+}
 
 
 @media screen and (max-width:801px) {
@@ -125,4 +135,19 @@ line-height: 2em;
     .green{
         color:black;
     }
+    .about{
+      flex-direction: column;
+    } 
+    .about__container:first-child{
+      display: flex;
+      justify-content: center;
+      margin-top:2em;
+    }
+    .img{
+      padding: 0em;
+      height:20em;
+      width:auto;
+     
+    }
+   
 }
