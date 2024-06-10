@@ -1,0 +1,34 @@
+
+/* third Section - Portfolio */
+.portfolio{
+    display: flex; 
+    flex-direction: column; 
+    background-color: black;
+    width:100%;
+    color:white;
+   }
+   .portfolio-h2{
+     display: flex;
+     justify-content:center;
+     margin-top: 2em;
+   }
+   .portfolio__container{
+   margin-top:4em;
+   display: flex;
+   justify-content: space-around;
+   /* border: 2px solid red; */
+   width: 100%;
+   flex-wrap: wrap;
+ }
+ 
+ .portfolio__container-card{
+   border: 2px solid white; 
+   width: 15em;
+ 
+ }
+ 
+ .portfolio-img{
+   max-width: 100%;
+   height:15em;
+ }
+ 

@@ -31,8 +31,8 @@ function Header() {
         <div className="header__container"></div>
         <div className="header__container">
           <div className="header__container--navbar">Home</div>
-          <div className="header__container--navbar">Portfolio</div>
           <div className="header__container--navbar">About Me</div>
+          <div className="header__container--navbar">Portfolio</div>
           <div className="header__container--navbar">Contact</div>
         </div>
         <span className="material-symbols-outlined menu" onClick={toggleMenu}>

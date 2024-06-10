@@ -1,0 +1,107 @@
+/* Section 2 About Me */
+.about {
+  display: flex;
+  justify-content: center;
+}
+.about__img {
+  width: 20em;
+  height: auto;
+  padding: 1em;
+}
+.about {
+  background-color: #1e1e1e;
+}
+
+.about__container {
+  color: white;
+  font-family: var(--font-jura);
+  /* border: 2px solid green; */
+  max-width: 60%;
+}
+
+.about__container--title {
+  display: flex;
+  margin-bottom: 0.5em;
+}
+
+.about__container--description {
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  margin: 1.5em;
+  line-height: 20px;
+}
+
+/* Skills  Experience Education  */
+.about__container--nav {
+  margin-top: 2em;
+  display: flex;
+  justify-content: space-around;
+}
+
+.navbar {
+  position: relative;
+  cursor: pointer;
+}
+
+.navbar::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  transform: scaleX(0);
+  background-color: transparent;
+  transition: transform 0.3s ease-in-out;
+  transform-origin: left;
+}
+
+.navbar:hover::after {
+  background-color: var(--color-green);
+  transform: scaleX(1);
+}
+.nav__description--container {
+  margin-top: 2em;
+  margin: 1.5em;
+  line-height: 20px;
+}
+.navbar:hover {
+  transform: scale(1.2);
+}
+.navbar.active {
+  border-bottom: 2px solid green;
+}
+
+.nav__description--title {
+  color: var(--color-green);
+}
+.nav__description--text {
+  margin-bottom: 0.7em;
+  list-style-type: none;
+}
+
+@media screen and (max-width: 801px) {
+  .about {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about__container--description {
+    width: 100%;
+  }
+  .about__img {
+    display: flex;
+   
+    flex-shrink:1;
+    padding:0;
+  }
+}
+
+@media screen and (max-width: 381px) {
+
+  .about {
+    flex-direction: column;
+    align-items: start;
+  }
+}

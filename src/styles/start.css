@@ -1,16 +1,20 @@
 /* section 1  */
-
+body{
+  background-color: black;
+  
+}
 .wrapper {
   display: flex;
   justify-content: space-around;
-  background-color: black;
   line-height: 40px;
   align-items: center;
+
 }
 .wrapper__container {
   font-family: var(--font-jura);
   color: white;
   margin-left: 2em;
+ 
 }
 .green {
   color: var(--color-green);
@@ -36,114 +40,7 @@
   height: auto;
 }
 
-/* Section 2 About Me */
-.img {
-  max-width: 100%;
-  width: 45em;
-  height: auto;
-  padding: 1em;
-}
-.about {
-  background-color: #1e1e1e;
-  display: flex;
-}
 
-.about__container {
-  color: white;
-  font-family: var(--font-jura);
-}
-
-.about__container--title {
-  display: flex;
-  margin-bottom: 0.5em;
-}
-
-.about__container--description {
-  display: flex;
-  flex-direction: column;
-  justify-self: center;
-  margin: 1.5em;
-  line-height: 20px;
-}
-
-/* Skills  Experience Education  */
-.about__container--nav {
-  margin-top: 2em;
-  display: flex;
-  justify-content: space-around;
-}
-
-.navbar {
-  position: relative;
-  cursor: pointer;
-}
-
-.navbar::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 2px;
-  transform: scaleX(0);
-  background-color: transparent;
-  transition: transform 0.3s ease-in-out;
-  transform-origin: left;
-}
-
-.navbar:hover::after {
-  background-color: var(--color-green);
-  transform: scaleX(1);
-}
-.nav__description--container {
-  margin-top: 2em;
-  margin: 1.5em;
-  line-height: 20px;
-}
-.navbar:hover {
-  transform: scale(1.2);
-}
-.navbar.active {
-  border-bottom: 2px solid green; 
-}
-
-.nav__description--title {
-  color: var(--color-green);
-}
-.nav__description--text {
-  margin-bottom: 0.7em;
-}
-
-
-
-/* third Section - Portfolio */
-.portfolio{
-   display: flex; 
-   background-color: black;
-   width:100%;
-   color:white;
-  
-  }
-  
-  .portfolio__container{
-    
-  margin-top:4em;
-  display: flex;
-  justify-content: space-around;
-  /* border: 2px solid red; */
-  width: 100%;
-  flex-wrap: wrap;
-}
-
-.portfolio__container-card{
-  border: 2px solid white; 
-  width: 15em;
-
-}
-.portfolio-img{
-  max-width: 100%;
-  height:15em;
-}
 
 @media screen and (max-width: 801px) {
   .wrapper {
@@ -166,18 +63,6 @@
   .green {
     color: black;
   }
-  .about {
-    flex-direction: column;
-  }
-  .about__container:first-child {
-    display: flex;
-    justify-content: center;
-    margin-top: 2em;
-  }
-  .img {
-    padding: 0em;
-    height: 20em;
-    width: auto;
-  }
+  
 }
 
