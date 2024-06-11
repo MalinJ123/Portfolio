@@ -13,7 +13,7 @@ function App() {
     <Header/>
     <Start/>
     <About/>
-    {/* <Portfolio/> */}
+    <Portfolio/>
     </>
   )
 }
