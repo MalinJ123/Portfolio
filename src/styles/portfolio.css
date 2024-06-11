@@ -28,6 +28,7 @@ margin-bottom: 5em;
 }
 .portfolio-img-container {
   position: relative;
+  
 }
 
 .portfolio__card-title{
@@ -40,10 +41,12 @@ margin-bottom: 5em;
  /* justify-content: center; */
 }
 .portfolio-img {
-  max-width: 100%;
   height: 15em;
   display: block;
   width: 100%;
+  max-width: 100%;
+  object-fit: cover; 
+  object-position: center;
 }
 .portfolio__card-description{
   font-family: jura;
