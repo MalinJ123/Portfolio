@@ -1,8 +1,15 @@
 import React, { useState, useEffect } from "react";
-import calender from "../images/portfolio/calernder.png";
+// import calender from "../images/portfolio/calernder.png";
 import hangman from "../images/portfolio/hangman.png";
 import pokemon from "../images/portfolio/pokemon.png";
 import "../styles/portfolio.css";
+
+import hund1 from "../images/portfolio/hund1.jpg";
+import hund2 from "../images/portfolio/hund2.jpg";
+import hund3 from "../images/portfolio/hund3.jpg";
+
+
+
 
 function Portfolio() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -15,27 +22,23 @@ function Portfolio() {
   }, [currentIndex]);
 
   function showImage(images, index) {
-    images.forEach((img, idx) => {
-      img.classList.toggle("hidden", idx !== index);
+    images.forEach((img, i) => {
+      if (i === index) {
+        img.classList.remove("hidden");
+      } else {
+        img.classList.add("hidden");
+      }
     });
   }
 
-  function nextImage() {
-    setCurrentIndex((currentIndex) => {
-      if (currentIndex === 2) {
-        return 0;
-      }
-      return currentIndex + 1;
-    });
+  function nextImage(event) {
+    const images = event.target.parentNode.querySelectorAll(".portfolio-img");
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
   }
 
-  function prevImage() {
-    setCurrentIndex((currentIndex) => {
-      if (currentIndex === 0) {
-        return 2;
-      }
-      return currentIndex - 1;
-    });
+  function prevImage(event) {
+    const images = event.target.parentNode.querySelectorAll(".portfolio-img");
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
   }
 
   return (
@@ -45,9 +48,10 @@ function Portfolio() {
         <div className="portfolio__container-card">
           <h2 className="portfolio__card-title">Kalender app</h2>
           <div className="portfolio-img-container">
-            <img className="portfolio-img" src={calender} alt="calender" />
-            <img className="portfolio-img hidden" src={hangman} alt="hangman" />
-            <img className="portfolio-img hidden" src={pokemon} alt="pokemon" />
+          
+            <img className="portfolio-img hidden" src={hund1} alt="hangman" />
+            <img className="portfolio-img hidden" src={hund2} alt="pokemon" />
+            <img className="portfolio-img hidden" src={hund3} alt="pokemon" />
             <button className="prev" onClick={prevImage}>
               ❮
             </button>
@@ -55,28 +59,7 @@ function Portfolio() {
               ❯
             </button>
           </div>
-          <p className ="portfolio__card-description">This calender app was made from 
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet dicta vitae repellendus adipisci explicabo, qui commodi reiciendis reprehenderit perspiciatis aut velit consequuntur odit repudiandae, provident accusamus aperiam. Velit, minima suscipit. </p>
-        
-        </div>
-
-
-        <div className="portfolio__container-card">
-          <h2 className="portfolio__card-title">Kalender app</h2>
-          <div className="portfolio-img-container">
-            <img className="portfolio-img" src={calender} alt="calender" />
-            <img className="portfolio-img hidden" src={hangman} alt="hangman" />
-            <img className="portfolio-img hidden" src={pokemon} alt="pokemon" />
-            <button className="prev" onClick={prevImage}>
-              ❮
-            </button>
-            <button className="next" onClick={nextImage}>
-              ❯
-            </button>
-          </div>
-          <p className ="portfolio__card-description">This calender app was made from 
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet dicta vitae repellendus adipisci explicabo, qui commodi reiciendis reprehenderit perspiciatis aut velit consequuntur odit repudiandae, provident accusamus aperiam. Velit, minima suscipit. </p>
-        
+          <p className="portfolio__card-description">description Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio natus beatae aspernatur saepe doloremque, accusantium dolores amet fuga laudantium odio quisquam explicabo rem blanditiis labore facilis perferendis quam nihil magnam.</p>
         </div>
       </div>
     </section>
@@ -84,3 +67,4 @@ function Portfolio() {
 }
 
 export default Portfolio;
+
