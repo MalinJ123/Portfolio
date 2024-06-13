@@ -16,8 +16,6 @@ import betterstart from "../images/portfolio/betterwebb/betterstart.png";
 import info from "../images/portfolio/betterwebb/info.png";
 import info2 from "../images/portfolio/betterwebb/info2.png";
 
-
-
 import m1 from "../images/portfolio/middags/m1.png";
 import m2 from "../images/portfolio/middags/m2.png";
 import m3 from "../images/portfolio/middags/m3.png";
@@ -52,15 +50,17 @@ const apps = [
   {
     title: "Middagshörnan",
     images: [m1, m2, m3],
-    description: "This is a fictional restaurant built with React that includes the following functionalities , professional appearance,  menu display, total order price, form validation, responsive design, a login ( username: admin, password: mums), where you can add, delete and edit dishes.",
-    link: "https://malinj123.github.io/MegaTurtles/", 
+    description:
+      "This is a fictional restaurant built with React that includes the following functionalities , professional appearance,  menu display, total order price, form validation, responsive design, a login ( username: admin, password: mums), where you can add, delete and edit dishes.",
+    link: "https://malinj123.github.io/MegaTurtles/",
   },
   {
     title: "Sommar app",
-    images:[summer1, summer2, summer3, summer4],
-    description: "For this project, I developed an online webshop using an API to market summer toys. Design wasn't the primary focus, I prioritized implementing functionality. The platform accommodates two user types: customers and administrators. Key features include robust search capabilities, sortable products by name and price, and comprehensive cart functionality allowing users to add, remove, and edit items, while displaying the total price accurately. Responsive design, a login ( username: admin, password: password), where you can add, delete and edit dishes.",
-    link : "https://main--exquisite-taiyaki-f6b45b.netlify.app/#/",
-  }
+    images: [summer1, summer2, summer3, summer4],
+    description:
+      "For this project, I developed an online webshop using an API to market summer toys. Design wasn't the primary focus, I prioritized implementing functionality. The platform accommodates two user types: customers and administrators. Key features include robust search capabilities, sortable products by name and price, and comprehensive cart functionality allowing users to add, remove, and edit items, while displaying the total price accurately. Responsive design, a login ( username: admin, password: password), where you can add, delete and edit dishes.",
+    link: "https://main--exquisite-taiyaki-f6b45b.netlify.app/#/",
+  },
 ];
 
 function Portfolio() {
@@ -70,6 +70,18 @@ function Portfolio() {
   const [currentAppIndices, setCurrentAppIndices] = useState(
     new Array(apps.length).fill(0)
   );
+
+  // const [showMore, setShowMore] = useState(false);
+  const [expandedCardIndex, setExpandedCardIndex] = useState(null);
+
+
+  const toggleShowMore = (appIndex) => {
+    if (expandedCardIndex === appIndex) {
+      setExpandedCardIndex(null); 
+    } else {
+      setExpandedCardIndex(appIndex); 
+    }
+  };
 
   useEffect(() => {
     portfolios.forEach((_, portfolioIndex) => {
@@ -81,7 +93,6 @@ function Portfolio() {
     });
   }, [currentIndices]);
 
-
   useEffect(() => {
     apps.forEach((_, appIndex) => {
       const card = document.querySelectorAll(".apps__container-card")[appIndex];
@@ -89,7 +100,6 @@ function Portfolio() {
       showImage(images, currentAppIndices[appIndex]);
     });
   }, [currentAppIndices]);
-
 
   function showImage(images, index) {
     images.forEach((img, i) => {
@@ -167,8 +177,7 @@ function Portfolio() {
         ))}
       </div>
 
-
- <h2 className="portfolio-h2">Other Projects</h2>
+            <h2 className="portfolio-h2">Other Projects</h2>
       <div className="apps__container">
         {apps.map((app, appIndex) => (
           <div className="apps__container-card" key={appIndex}>
@@ -185,7 +194,12 @@ function Portfolio() {
               <button
                 className="prev"
                 onClick={(event) =>
-                  prevImage(event, setCurrentAppIndices, currentAppIndices, appIndex)
+                  prevImage(
+                    event,
+                    setCurrentAppIndices,
+                    currentAppIndices,
+                    appIndex
+                  )
                 }
               >
                 ❮
@@ -193,15 +207,26 @@ function Portfolio() {
               <button
                 className="next"
                 onClick={(event) =>
-                  nextImage(event, setCurrentAppIndices, currentAppIndices, appIndex)
+                  nextImage(
+                    event,
+                    setCurrentAppIndices,
+                    currentAppIndices,
+                    appIndex
+                  )
                 }
               >
                 ❯
               </button>
             </div>
-            <p className="apps__card-description">{app.description}</p>
+            <p className="apps__card-description">
+              {expandedCardIndex === appIndex
+                ? app.description
+                : `${app.description.substring(0, 100)}...`}
+            </p>
+            <button onClick={() => toggleShowMore(appIndex)} className="show-more-button">
+              {expandedCardIndex === appIndex ? 'Visa mindre' : 'Visa mer'}
+            </button>
             <p className="apps__card-description">{app.link}</p>
-
           </div>
         ))}
       </div>

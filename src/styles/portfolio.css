@@ -103,3 +103,15 @@ margin-bottom: 5em;
 .next {
   display: none;
 }
+
+.show-more-button {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.show-more-button:hover {
+  background-color: #0056b3;
+}
