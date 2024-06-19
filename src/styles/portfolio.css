@@ -57,7 +57,7 @@ margin-bottom: 5em;
   width: 100%;
   max-width: 100%;
   object-fit: cover; 
-  object-position: center;
+  /* object-position: center; */
 }
 .apps__card-description,
 .portfolio__card-description{
@@ -65,6 +65,12 @@ margin-bottom: 5em;
   font-size: 16px;
   margin-bottom:1em;
   margin-top:1em;
+}
+
+.apps__card-description.link:hover{
+  color:rgb(0, 255, 0);
+  cursor: pointer; 
+  
 }
 
 .hidden {
@@ -113,5 +119,5 @@ margin-bottom: 5em;
 }
 
 .show-more-button:hover {
-  background-color: #0056b3;
+  background-color: var(--color-green);
 }

@@ -25,6 +25,12 @@ import summer2 from "../images/portfolio/summer/summer2.png";
 import summer3 from "../images/portfolio/summer/summer3.png";
 import summer4 from "../images/portfolio/summer/summer4.png";
 
+import f1 from "../images/portfolio/funkyfusion/f1.png";
+import f2 from "../images/portfolio/funkyfusion/f2.png";
+import f3 from "../images/portfolio/funkyfusion/f3.png";
+import f4 from "../images/portfolio/funkyfusion/f4.png";
+
+
 const portfolios = [
   {
     title: "firefly app",
@@ -61,6 +67,13 @@ const apps = [
       "For this project, I developed an online webshop using an API to market summer toys. Design wasn't the primary focus, I prioritized implementing functionality. The platform accommodates two user types: customers and administrators. Key features include robust search capabilities, sortable products by name and price, and comprehensive cart functionality allowing users to add, remove, and edit items, while displaying the total price accurately. Responsive design, a login ( username: admin, password: password), where you can add, delete and edit dishes.",
     link: "https://main--exquisite-taiyaki-f6b45b.netlify.app/#/",
   },
+  {
+    title: "Funkey Fusion",
+    images: [f1, f2, f3, f4],
+    description:
+      "For this project, I developed an online webshop using an API to market summer toys. Design wasn't the primary focus, I prioritized implementing functionality. The platform accommodates two user types: customers and administrators. Key features include robust search capabilities, sortable products by name and price, and comprehensive cart functionality allowing users to add, remove, and edit items, while displaying the total price accurately. Responsive design, a login ( username: admin, password: password), where you can add, delete and edit dishes.",
+    link: "https://funkyfusion.onrender.com/",
+  },
 ];
 
 function Portfolio() {
@@ -73,7 +86,6 @@ function Portfolio() {
 
   // const [showMore, setShowMore] = useState(false);
   const [expandedCardIndex, setExpandedCardIndex] = useState(null);
-
 
   const toggleShowMore = (appIndex) => {
     if (expandedCardIndex === appIndex) {
@@ -159,13 +171,27 @@ function Portfolio() {
               ))}
               <button
                 className="prev"
-                onClick={(event) => prevImage(event, portfolioIndex)}
+                onClick={(event) =>
+                  prevImage(
+                    event,
+                    setCurrentIndices,
+                    currentIndices,
+                    portfolioIndex
+                  )
+                }
               >
                 ❮
               </button>
               <button
                 className="next"
-                onClick={(event) => nextImage(event, portfolioIndex)}
+                onClick={(event) =>
+                  nextImage(
+                    event,
+                    setCurrentIndices,
+                    currentIndices,
+                    portfolioIndex
+                  )
+                }
               >
                 ❯
               </button>
@@ -177,7 +203,7 @@ function Portfolio() {
         ))}
       </div>
 
-            <h2 className="portfolio-h2">Other Projects</h2>
+      <h2 className="portfolio-h2">Other Projects</h2>
       <div className="apps__container">
         {apps.map((app, appIndex) => (
           <div className="apps__container-card" key={appIndex}>
